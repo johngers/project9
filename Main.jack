@@ -1,0 +1,46 @@
+class Main {
+    function void main() {
+		var int x;
+		var int y;
+		var char key;
+		var boolean exit;
+		var boolean draw;
+		let x = 30;
+		let y = 30;
+
+      	let exit = false;
+		 while (~exit) {
+         	// waits for a key to be pressed
+         	while (key = 0) {
+            let key = Keyboard.keyPressed();
+         	}
+			if (key = 81)  { let exit = true; }     //Q key
+         	if (key = 82)  {   // R key
+				do Screen.clearScreen();
+				let draw = false;
+				//let x = 30;
+				//let y = 30;
+			}
+         	if (key = 70)  { //F key
+				let draw = false;
+			}
+         	if (key = 69)  { //E key
+				let draw = true;
+			}
+
+         	if (key = 87) { let y = y-5;}  //W
+         	if (key = 83) { let y = y+5;}   //S
+         	if (key = 65) { let x = x-5; }   //A
+         	if (key = 68) { let x = x+5;}   //D
+			// waits for the key to be released
+         	while (~(key = 0)) {
+            	let key = Keyboard.keyPressed();
+				if (draw) {
+					do Screen.drawCircle(x, y, 5);
+				}
+
+			}
+         }
+		return;
+    }
+}
